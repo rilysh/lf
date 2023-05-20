@@ -1,0 +1,10 @@
+#!/bin/env bash
+
+PROGRAM=lf
+FLAGS="-Wall -Wextra -O3 -s -lm"
+
+[ $(command -v cc) ] && {
+    cc $PROGRAM.c -o $PROGRAM $FLAGS && exit 0
+}
+
+echo Error: No C compiler found && exit 1
